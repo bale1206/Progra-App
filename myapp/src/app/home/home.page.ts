@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { AnimationController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,33 +8,18 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor(private router: Router) { }
-
+  /* Objeto JSON para usuario */
   user = {
-    "username": "",
-    "password": ""
-  }
-  username: String = "";
-  password: String = "";
+    username: '',
+    password: '',
+  };
+  /* mensaje de respuesta */
+  mensaje = '';
+  /* Estado de carga */
+  spinner = false;
 
-  Validar() {
-    if (this.username.length != 0) {
-      if (this.password.length != 0) {
-        console.log("username:" + this.username + "\n password: " + this.password)
-        let navigationExtras: NavigationExtras = {
-          state: {
-            "username": this.username,
-            "password": this.password
-          }
-        }
-        this.router.navigate(["/dashboard"], navigationExtras)
-      } else {
-        console.log("Contraseña vacia ")
-      }
-    } else {
-      console.log("Username Vacio")
+  constructor(private router: Router, private animationController: AnimationController) {
+
     }
 
-  }
 }
