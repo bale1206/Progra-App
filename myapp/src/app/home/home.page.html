@@ -1,25 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <img
-        src="https://cdn.discordapp.com/attachments/1257826922470182966/1277786156137971722/image.png?ex=66d30bd7&is=66d1ba57&hm=2d83bdd6fbbae4c17de73d6ca3b0088d055fa5b3238ae5c100dd04c6d7a86729&"
-        alt="" srcset="">
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Login de Acceso</ion-title>
+      <ion-title>Menu Content</ion-title>
     </ion-toolbar>
   </ion-header>
-  <br>
-  <br>
-    <h1>Login </h1>
-</ion-content>
-
-
+  <ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        <img src="../../assets/img/image.png" alt="" style="max-width: 100%; height: auto; display: block; margin: auto;">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> <h1 style="max-width: 100%; height: auto; display: block; margin: auto; text-align: center;">Login</h1> </ion-content>
+  
 
   <!-- instalación angular
  ng version
