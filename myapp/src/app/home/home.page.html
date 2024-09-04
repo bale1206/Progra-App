@@ -17,6 +17,7 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
+
   <div id="container">
     <ion-card>
       <ion-card-content>
@@ -24,7 +25,12 @@
           <br>
           <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario"></ion-input>
           <br>
-          <ion-input label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña" type="password"></ion-input>
+          <ion-input label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña" type="password">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+          <br>
+          <ion-button fill="outline">Ingresar</ion-button>
+          <ion-button fill="solid">Registrarse</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
@@ -37,7 +43,6 @@
  ng add @angular/material-->
 
 
- <!-- 
+  <!-- 
  npm install
- ionic generate component Base/header 
- -->
+ ionic generate component Base/header -->
