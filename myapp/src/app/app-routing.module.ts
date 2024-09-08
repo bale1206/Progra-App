@@ -11,7 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  
+  {
+    path: 'enter',
+    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
+  },
 ];
 
 @NgModule({
