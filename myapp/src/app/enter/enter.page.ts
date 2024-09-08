@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
+
 
 @Component({
   selector: 'app-enter',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterPage implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+   }
+
+
+
 
   ngOnInit() {
   }
