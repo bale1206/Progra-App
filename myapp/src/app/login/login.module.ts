@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { registerPage } from './register.page';
+import { LoginPage } from './login.page';
 
-import { registerPageRoutingModule } from './register-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
 
 @NgModule({
@@ -12,8 +12,8 @@ import { registerPageRoutingModule } from './register-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    registerPageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [registerPage]
+  declarations: [LoginPage]
 })
-export class registerPageRoutingModule {}
+export class LoginPageModule {}

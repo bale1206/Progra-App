@@ -11,10 +11,8 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  
   {
-    path: 'register',
-    loadChildren: () => import('./Register/register.module').then( m => m.registerPageRoutingModule) //??
-  },  {
     path: 'enter',
     loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
   },
