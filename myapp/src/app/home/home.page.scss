@@ -6,6 +6,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  background-image: url(../../assets/img/imagestreet.jpg);
 }
 
 #container strong {
@@ -24,9 +25,6 @@
   text-decoration: none;
 }
 
-img{
-  margin-left: 400px;
-}
 
 h1{
   margin-left: 550px;
@@ -36,3 +34,8 @@ h1{
 ionic-button{
   color: aquamarine;
 }
+
+ion-card{
+  margin-top: 250px;
+}
+
