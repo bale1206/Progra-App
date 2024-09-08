@@ -12,11 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   
-  {
-    path: 'enter',
-    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
-  },
-
 ];
 
 @NgModule({
