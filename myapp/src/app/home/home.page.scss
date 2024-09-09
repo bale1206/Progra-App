@@ -5,8 +5,9 @@
   left: 0;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);/* 
   background-image: url(../../assets/img/imagestreet.jpg);
+  background-size: cover; */
 }
 
 #container strong {
@@ -36,6 +37,6 @@ ionic-button{
 }
 
 ion-card{
-  margin-top: 250px;
+  margin-top: 150px;
 }
 
