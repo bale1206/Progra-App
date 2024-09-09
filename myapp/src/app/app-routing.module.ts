@@ -14,11 +14,11 @@ const routes: Routes = [
   {
     path: 'enter',
     loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
-  },  {
+  },
+  {
     path: 'reset',
     loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule)
   },
-<<<<<<< HEAD
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
@@ -26,11 +26,11 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
 
-];
-=======
->>>>>>> c5645424075d26a92316c4508fe35f3c630549a9
 
 ];
 
