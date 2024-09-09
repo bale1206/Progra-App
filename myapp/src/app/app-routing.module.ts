@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'enter',
     loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
+  },  {
+    path: 'reset',
+    loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule)
   },
+
 ];
 
 @NgModule({
