@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  username = '';
+  constructor(private router: Router) {
+    const navegacion = this.router.getCurrentNavigation();
+    const state = navegacion?.extras.state as {
+      username: '';
+      password: '';
+    };
+    this.username = state.username;
+    //Console.log
+    //Mensaje bienvenida
   }
 
+  ngOnInit() {}
 }
