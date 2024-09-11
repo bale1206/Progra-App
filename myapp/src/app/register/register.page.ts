@@ -14,11 +14,11 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
 
-  formularioRegistro: FormGroup;
+  formularioRegister: FormGroup;
   
   constructor(public fb: FormBuilder,
     public alertController: AlertController) {
-    this.formularioRegistro = this.fb.group({
+    this.formularioRegister = this.fb.group({
       'nombre': new FormControl("", Validators.required),
       'password': new FormControl("", Validators.required),
       'confirmacionPassword': new FormControl("", Validators.required)
@@ -29,9 +29,9 @@ export class RegisterPage implements OnInit {
   }
 
   async guardar(){
-    var f = this.formularioRegistro.value;
+    var f = this.formularioRegister.value;
 
-    if(this.formularioRegistro.invalid){
+    if(this.formularioRegister.invalid){
       const alert = await this.alertController.create({
         header: 'Datos incompletos',
         message: 'Tienes que llenar todos los datos',
