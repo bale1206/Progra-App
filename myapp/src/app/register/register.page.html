@@ -12,28 +12,25 @@
   </ion-header>
 </ion-content>
 
-<ion-content>
+
+<div id="container">
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Registro</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <form [formGroup]="formularioRegister" (keyup.enter)="guardar()">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="password" type="password" ></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Confirmar contraseña</ion-label>
-          <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
-        </ion-item>
-        <br>
-        <ion-button (click)="guardar()">Registrarse</ion-button>
-      </form>
-    </ion-card-content>
+    <h1>Registrarse</h1>
+    <ion-input label="Nombre" label-placement="floating" fill="outline" placeholder="Ingresar su nombre"></ion-input>
+    <br>
+    <ion-input label="Apellido" label-placement="floating" fill="outline" placeholder="Ingresar su apellido"></ion-input>
+    <br>
+    <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario"></ion-input>
+    <br>
+    <ion-input label="Fecha de nacimiento" label-placement="floating" fill="outline" placeholder="Ingresar fecha de nacimiento" type="date"></ion-input>
+    <br>
+    <ion-input label="Numero" type="tel" placeholder="888-888-8888">Numero de telefono</ion-input>
+    <br>
+    <ion-input type="password" label="Password" value="Contraseña">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle></ion-input>
+    <br>
+    <ion-button>Registrar</ion-button>
+
   </ion-card>
-</ion-content>
+</div>
+
