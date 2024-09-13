@@ -14,10 +14,10 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit{
 
-  formLogin: FormGroup;
+  formularioLogin: FormGroup;
 
   constructor(public fb: FormBuilder, public alertController: AlertController, public navControl:NavController) {
-    this.formLogin = this.fb.group({
+    this.formularioLogin = this.fb.group({
       'usuario': new FormControl("", Validators.required),
       'contrasena': new FormControl("", Validators.required)
     })
@@ -25,8 +25,8 @@ export class LoginPage implements OnInit{
   ngOnInit() {
     
   }
-  async ingresar(){
-    const f = this.formLogin.value;
+  async entrar(){
+    const f = this.formularioLogin.value;
 
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
     if (usuario.nombre == f.nombre && usuario.password== f.password){

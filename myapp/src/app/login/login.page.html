@@ -14,18 +14,24 @@
 
   <div id="container">
     <ion-card>
-      <ion-card-content>
-        <h1 style="max-width: 100%; height: auto; display: block; margin: auto; text-align: center; color: black;">Login</h1> 
-          <br>
-          <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario"></ion-input>
-          <br>
-          <ion-input label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña" type="password">
-          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-          </ion-input>
-          <br>
-          <ion-button (click) = 'Login()' fill="outline">Ingresar</ion-button>
-          <ion-button fill="outline" [routerLink] = "['/register']">Registrar</ion-button>
-      </ion-card-content>
+      <form [formGroup]="formularioLogin" >
+        <ion-card-content>
+          <h1 style="max-width: 100%; height: auto; display: block; margin: auto; text-align: center; color: black;">Login</h1> 
+          <ion-item>
+            <br>
+            <ion-input formControlName="Usuario" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario"></ion-input>
+            <br>
+            <ion-input formControlName="Contraseña" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña" type="password">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+            <br>
+            <ion-button (click)="entrar()" fill="outline">Ingresar</ion-button>
+            <ion-button fill="outline" [routerLink] = "['/register']">Registrar</ion-button>
+          </ion-item>
+            
+        </ion-card-content>
+      </form>
+      
     </ion-card>
   </div>
   
