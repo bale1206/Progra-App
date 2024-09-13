@@ -1,58 +1,38 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { RegisterPage } from './register/register.page';
 import { LoginPage } from './login/login.page';
-import { noIngresoGuard } from './no-ingreso.guard';
-import { ingresoGuard } from './ingreso.guard';
+import { RegisterPage } from './register/register.page';
+import { ResetPage } from './reset/reset.page';
+import { ProfilePage } from './profile/profile.page';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule) },
+  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule) },
+  { path: 'reset', loadChildren: () => import('./reset/reset.module').then(m => m.ResetPageModule) },
+  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule) },
+  { path: 'test', component: TestComponent },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate: [noIngresoGuard]
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'enter',
-    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule),
-    canActivate: [noIngresoGuard]
-
-  },
-  {
-    path: 'reset',
-    loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule),
-    canActivate: [noIngresoGuard]
+    path: 'login',
+    component: LoginPage
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule),
-    canActivate: [noIngresoGuard]
+    component: RegisterPage
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
-    canActivate: [noIngresoGuard]
+    path: 'reset',
+    component: ResetPage
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
-    canActivate: [ingresoGuard]
-  },
-  { path: 'register', component: RegisterPage },
-  { path: 'login', component: LoginPage },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
-
-
+    component: ProfilePage
+  }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
