@@ -13,26 +13,32 @@
 </ion-content>
 
 
-<form [formGroup]="registerForm" (ngSubmit)="register()">
+<div id="container">
   <ion-card>
     <h1>Registrarse</h1>
-    <ion-input formControlName="Nombre" label="Nombre" label-placement="floating" fill="outline" placeholder="Ingresar su nombre"></ion-input>
+    <ion-input label="Nombre" label-placement="floating" fill="outline" placeholder="Ingresar su nombre"></ion-input>
     <br>
-    <ion-input formControlName="Apellido" label="Apellido" label-placement="floating" fill="outline" placeholder="Ingresar su apellido"></ion-input>
+    <ion-input label="Apellido" label-placement="floating" fill="outline" placeholder="Ingresar su apellido"></ion-input>
     <br>
-    <ion-input formControlName="Usuario" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario"></ion-input>
+    <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario"></ion-input>
     <br>
-    <ion-input formControlName="datetime" label="Fecha de nacimiento" label-placement="floating" fill="outline" placeholder="Ingresar nombre de usuario" type="date"></ion-input>
+    <ion-item>
+      <ion-label style="text-align: start;">Fecha de Nacimiento</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime" presentation="date"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
     <br>
-    <ion-input formControlName="Numero" label="Numero" type="tel" placeholder="888-888-8888" fill="outline">Numero de telefono</ion-input>
+    <ion-input label="Numero" type="tel" placeholder="888-888-8888" fill="outline">Numero de telefono</ion-input>
     <br>
-    <ion-input formControlName="password" type="password" label="Password" fill="outline">
+    <ion-input type="password" label="Password" value="Contraseña" fill="outline">
       <ion-input-password-toggle slot="end"></ion-input-password-toggle></ion-input>
     <br>
-    <ion-button (click) = "register()" expand="full" type="submit">Registrar</ion-button>
+    <ion-button>Registrar</ion-button>
 
   </ion-card>
-</form>
-  
-
-
+</div>

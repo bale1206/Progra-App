@@ -23,17 +23,19 @@ export class LoginPage implements OnInit{
     })
   }
   ngOnInit() {
-    
+
   }
-  async entrar(){
+  async entrar() {
     const f = this.formularioLogin.value;
 
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
-    if (usuario.nombre == f.nombre && usuario.password== f.password){
+
+    if (usuario.nombre == f.nombre && usuario.password == f.password) {
       console.log('Ingresado');
-      localStorage.setItem('Ingresado','true');
+      localStorage.setItem('Ingresado', 'true');
       this.navControl.navigateRoot('enter');
-    }else{
+      return true;  // Añadir un return aquí para indicar éxito
+    } else {
       const alert = await this.alertController.create({
         header: 'Algo te falto',
         message: 'Tienes que llenar todos los campos.',
@@ -41,8 +43,9 @@ export class LoginPage implements OnInit{
       });
 
       await alert.present();
-      return true;
+      return false;  // Retornar false si no se cumple el if
     }
   }
-  
+
+
 }

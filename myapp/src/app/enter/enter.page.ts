@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../service/auth.service';  // Ajusta la ruta según tu estructura de carpetas
+import { AuthService } from '../service/auth.service';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+
+import { EnterPageRoutingModule } from './enter-routing.module'; 
 
 @Component({
   selector: 'app-enter',
   templateUrl: './enter.page.html',
   styleUrls: ['./enter.page.scss'],
+
 })
 export class EnterPage implements OnInit {
   username: string = '';
@@ -16,9 +23,6 @@ export class EnterPage implements OnInit {
     if (user) {
       this.username = user.Usuario;
     } else {
-      // Maneja el caso en que el usuario no está autenticado
-      // Por ejemplo, redirigir al login
-      // this.router.navigate(['/login']);
     }
   }
 }
