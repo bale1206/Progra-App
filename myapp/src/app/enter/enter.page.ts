@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';  // Ajusta la ruta según tu estructura de carpetas
 
 @Component({
   selector: 'app-enter',
@@ -7,17 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./enter.page.scss'],
 })
 export class EnterPage implements OnInit {
-  username = '';
-  constructor(private router: Router) {
-    const navegacion = this.router.getCurrentNavigation();
-    const state = navegacion?.extras.state as {
-      username: '';
-      password: '';
-    };
-    this.username = state.username;
-    //Console.log
-    //Mensaje bienvenida
-  }
+  username: string = '';
 
-  ngOnInit() {}
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    const user = this.authService.getUser();
+    if (user) {
+      this.username = user.Usuario;
+    } else {
+      // Maneja el caso en que el usuario no está autenticado
+      // Por ejemplo, redirigir al login
+      // this.router.navigate(['/login']);
+    }
+  }
 }

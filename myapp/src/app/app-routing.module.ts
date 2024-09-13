@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RegisterPage } from './register/register.page';
+import { LoginPage } from './login/login.page';
+import { noIngresoGuard } from './no-ingreso.guard';
+import { ingresoGuard } from './ingreso.guard';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [noIngresoGuard]
   },
   {
     path: '',
@@ -13,24 +18,33 @@ const routes: Routes = [
   },
   {
     path: 'enter',
-    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
+    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule),
+    canActivate: [noIngresoGuard]
+
   },
   {
     path: 'reset',
-    loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule)
+    loadChildren: () => import('./reset/reset.module').then( m => m.ResetPageModule),
+    canActivate: [noIngresoGuard]
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule),
+    canActivate: [noIngresoGuard]
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [noIngresoGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
+    canActivate: [ingresoGuard]
   },
+  { path: 'register', component: RegisterPage },
+  { path: 'login', component: LoginPage },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 
 
 ];
