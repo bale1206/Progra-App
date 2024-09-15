@@ -14,34 +14,20 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'enter',
-    loadChildren: () => import('./enter/enter.module').then(m => m.EnterPageModule),
-    canActivate: [noIngresoGuard]
-  },
+  
   {
     path: 'reset',
     loadChildren: () => import('./reset/reset.module').then(m => m.ResetPageModule),
     canActivate: [noIngresoGuard]
   },
-  {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule),
-    canActivate: [noIngresoGuard]
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
-    canActivate: [noIngresoGuard]
-  },
+  
+ 
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [ingresoGuard]
-  },  {
-    path: 'enter',
-    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
-  }
+  },
+ 
 
 ];
 
